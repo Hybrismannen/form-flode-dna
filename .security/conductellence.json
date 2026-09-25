@@ -1,0 +1,15 @@
+{
+  "schema": "cdx.system-binding/v1.0",
+  "system_repository": "Hybrismannen/form-flode-dna",
+  "authority_ref": "CDX-SYS-001",
+  "authority_repository": "Hybrismannen/Conductellence-",
+  "law_id": "CDX-LAW-001",
+  "policy_bundle_version": "1.0.0",
+  "jurisdiction": "NON_HUMAN_OPERATION",
+  "binding_state": "BOUND_PENDING_RUNTIME_INTEGRATION",
+  "authority_mutation": "HUMAN_RESERVED",
+  "missing_permission": "DENY",
+  "content_may_modify_authority": false,
+  "evidence_plane": "SPETL_REQUIRED_FOR_CONSEQUENTIAL_RUNTIME",
+  "updated_at": "2026-09-25"
+}
