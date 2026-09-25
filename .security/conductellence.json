@@ -6,10 +6,12 @@
   "law_id": "CDX-LAW-001",
   "policy_bundle_version": "1.0.0",
   "jurisdiction": "NON_HUMAN_OPERATION",
-  "binding_state": "BOUND_PENDING_RUNTIME_INTEGRATION",
+  "binding_state": "BOUND_CI_MONITORED",
   "authority_mutation": "HUMAN_RESERVED",
   "missing_permission": "DENY",
   "content_may_modify_authority": false,
   "evidence_plane": "SPETL_REQUIRED_FOR_CONSEQUENTIAL_RUNTIME",
-  "updated_at": "2026-09-25"
+  "updated_at": "2026-09-25",
+  "binding_audit_workflow": ".github/workflows/conductellence-binding-audit.yml",
+  "runtime_integration_state": "NOT_VERIFIED"
 }
