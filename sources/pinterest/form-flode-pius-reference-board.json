@@ -1,0 +1,37 @@
+{
+  "source_id": "SRC-PIN-001",
+  "source_type": "pinterest_board",
+  "platform": "Pinterest",
+  "title": "Form & Flöde / Pius - Reference board",
+  "owner_username": "linusfast",
+  "canonical_url": "https://se.pinterest.com/linusfast/form-fl%C3%B6de-pius-reference-board/",
+  "board_id": null,
+  "access_mode": "pinterest_api_v5",
+  "auth_mode": "client_credentials",
+  "scopes": [
+    "boards:read",
+    "pins:read"
+  ],
+  "ingestion_status": "staged_credentials_required",
+  "corpus_role": "primary_visual_reference_feed",
+  "gracey_binding": {
+    "agency": "GraceY",
+    "function": "design_reference_intelligence",
+    "downstream": [
+      "design_dna_extraction",
+      "project_design_rules",
+      "figma",
+      "canva",
+      "miro_figjam",
+      "github_implementation"
+    ]
+  },
+  "provenance_policy": {
+    "preserve_creator_attribution": true,
+    "preserve_source_url": true,
+    "mirror_external_binary_assets": false,
+    "derived_analysis_allowed": true
+  },
+  "created_on": "2026-10-02",
+  "last_sync": null
+}
