@@ -1,0 +1,57 @@
+name: Pinterest reference sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      PINTEREST_APP_ID: ${{ secrets.PINTEREST_APP_ID }}
+      PINTEREST_APP_SECRET: ${{ secrets.PINTEREST_APP_SECRET }}
+      PINTEREST_BOARD_NAME: "Form & Flöde / Pius - Reference board"
+
+    steps:
+      - name: Check credentials
+        id: auth
+        shell: bash
+        run: |
+          if [[ -n "$PINTEREST_APP_ID" && -n "$PINTEREST_APP_SECRET" ]]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "Pinterest sync is staged but inactive: repository secrets are not configured."
+          fi
+
+      - name: Checkout
+        if: steps.auth.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.auth.outputs.ready == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync Pinterest board
+        if: steps.auth.outputs.ready == 'true'
+        run: python scripts/sync_pinterest.py
+
+      - name: Commit updated reference metadata
+        if: steps.auth.outputs.ready == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet -- data sources; then
+            echo "No reference changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data sources
+          git commit -m "Sync Pinterest design references"
+          git push
