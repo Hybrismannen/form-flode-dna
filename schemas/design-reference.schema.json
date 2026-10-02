@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Hybrismannen/form-flode-dna/schemas/design-reference.schema.json",
+  "title": "GraceY Design Reference",
+  "type": "object",
+  "required": [
+    "reference_id",
+    "source_id",
+    "source_platform",
+    "source_object_id",
+    "source_url",
+    "reference_status",
+    "provenance"
+  ],
+  "properties": {
+    "reference_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "source_platform": {
+      "type": "string"
+    },
+    "source_object_id": {
+      "type": "string"
+    },
+    "source_board_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_board_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "external_link": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "alt_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "creator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "media_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "remote_image_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "dominant_color": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "reference_status": {
+      "type": "string",
+      "enum": [
+        "raw-unreviewed",
+        "reviewed",
+        "principle-extracted",
+        "applied",
+        "retired"
+      ]
+    },
+    "design_dna": {
+      "type": "object",
+      "properties": {
+        "typography": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "grid_layout": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "hierarchy": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "color_logic": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "geometry": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "density": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "imagery": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "texture": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "data_visualization": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "motion_interaction": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "visual_grammar": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "reusable_principles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "anti_patterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_preserved",
+        "binary_mirrored"
+      ],
+      "properties": {
+        "source_preserved": {
+          "type": "boolean"
+        },
+        "binary_mirrored": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
