@@ -24,7 +24,7 @@ Configuration:
 
 ## Pipeline
 
-```
+```text
 Pinterest / Behance / Dribbble / Are.na / Awwwards / other sources
         |
         v
@@ -70,3 +70,20 @@ The repository does **not** mirror third-party creative works by default. It sto
 - Pinterest source: **registered**
 - Automated Pinterest ingestion: **staged; credentials required**
 - Design-DNA analysis: **schema active; analysis pass follows ingestion**
+
+---
+
+## Public provenance
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/Hybrismannen/form-flode-dna/main/assets/form-flode-logo.png" alt="Form & Flöde" width="120">
+</p>
+
+**Form & Flöde original public infrastructure.**  
+Public provenance is governed by the **FFC Public Provenance Standard v1.0**.
+
+### Support independent Form & Flöde work
+
+Form & Flöde makes selected research, models, tools and development work openly available. If this work has been useful to you, you can support its continued development.
+
+**[Support independent Form & Flöde work →](https://paypal.me/djlifehack)**
